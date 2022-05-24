@@ -7,33 +7,36 @@ debugger
     }
 
 
-    let currencies = [
-        {
-            name: "JMD",
-            country: "jamaica ",
-            symbol: "$"
-        },
-        {
-            name: "yen",
-            country: "Japan",
-            symbol: '¥'
-        }
-    ]
+    let currencies = {
+
+            JMD: {
+                name: "JMD",
+                country: "jamaica ",
+                symbol: "$"
+            },
+            JPN : {
+                name: "YEN",
+                country: "Japan",
+                symbol:'¥'
+            }
+
+}
 
 
     // create prototype to access all methods in the Dolares scope
     Dolares.prototype ={
             //gets the symbol of the currency entered
             // TODO: Fix the issue where currency object is not being pass into this function
-            currency_symbol : function (){
+            Currency : function (){
+                debugger
                 //check if currency exists
                 if (this.currency){
                     //loop through the array Object to find the currency
-                    for (let i of currencies){
+                    for(const property in currencies){
                         debugger
                         //if currency is equal to any of the currency names in the list
-                        if(i.name === this.currency ){
-                            return i.symbol
+                        if(property === this.currency ){
+                            return property
                         }
                         else{
                             return "Unknown Currency"
@@ -56,13 +59,20 @@ debugger
 
         //TODO: write necessary function to handle said description
             // converts a string or value into a currency value
-            convert_to_currency: function(){
+            format: function(){
+                    if (this.value){
+                        if (typeof(this.value) === "number"){
+                            return this.value.toFixed(2);
+                        }else {
+                            return "value is not a number"
+                        }
+                    }
 
             },
         //TODO: write necessary function to handle said description
             //returns a list of all currencies available to the user using ISO 4217 standards
             available_currencies: function (){
-
+                return(currencies)
             }
 
     }
