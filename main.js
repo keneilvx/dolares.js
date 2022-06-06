@@ -1,4 +1,4 @@
-let a = dolares("JPN", "jamaica", 100)
+let a = dolares("YEN", "jamaica", 100)
 
 
 console.log(a.Currency());
