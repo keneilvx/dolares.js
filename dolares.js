@@ -12,15 +12,37 @@ debugger
             {
                 name: "JMD",
                 country: "Jamaica ",
-                symbol: "$"
+                symbol: "$",
+                decimal_points: 2,
             },
              {
                 name: "YEN",
                 country: "Japan",
-                symbol:'¥'
+                decimal_points: 2,
+                symbol:'¥',
+            },
+            {
+                name: "USD",
+                country: "USA",
+                decimal_points: 2,
+                symbol: "$",
+
+            },
+            {
+
+                name: "EURO",
+                symbol: "€",
+                decimal_digits: 2,
+                rounding: 0,
+                code: "EUR",
+
             }
 
-]
+
+
+
+
+    ]
         //Stores a default symbol for user
         let symbol = "$"
 
