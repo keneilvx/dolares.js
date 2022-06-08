@@ -4,7 +4,7 @@ A library made for formatting currencies, built using the ES6. It allows you
 to easily format currencies with ease
  
  
- ##Importing Dolares
+ ## Importing Dolares
  
 
  - you in initialize dolares by defining a variable and assigning dolares to it, dolares takes in two parameters
@@ -23,7 +23,7 @@ let dollar = dolares("japan", "", 100)
 
 ```
  
-##Returning a value 
+## Returning a value 
  takes in a parameter of amount you want to convert to currency this should be a number 
 
  
@@ -39,7 +39,7 @@ let dollar = dolares("japan", "", 100)
 ```
 
 
-#Formatting 
+## Formatting 
 Formatting values are simple appending ```.format()``` after calling ```.Currency```
 
  ```
