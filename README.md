@@ -14,21 +14,15 @@ OR
 
 ```<script src="dolares.js"></script> ```
  
- - you in initialize dolares by defining a variable and assigning dolares to it, dolares takes in two parameters
-a ```ISO_CODE/COUNTRY_NAME``` and a ```VALUE``` 
+ - you in initialize dolares by defining a variable and assigning dolares to it, dolares takes in three parameters
+a ```CURRENCY_CODE```, ```COUNTRY_NAME```and a ```VALUE``` 
 
 ``` 
- dolares('ISO_CODE/COUNTRY', 'AMOUNT')
+ dolares('CURRENCY_CODE', 'COUNTRY_NAME', 'AMOUNT')
 let dollar = dolares("YEN", "", 100) 
 
 ```
-OR 
 
-``` 
-
-let dollar = dolares("japan", "", 100) 
-
-```
  
 ## Returning a value 
  takes in a parameter of amount you want to convert to currency this should be a number 
@@ -37,10 +31,10 @@ let dollar = dolares("japan", "", 100)
 
  ```
 
-  let dollar = dolares('USA', 1000)
+  let dollar = dolares('USD', "", 1000)
   
   dollar.Currency()
-  output: $1000.00
+  output: $1000
   
   
 ```
@@ -51,13 +45,15 @@ Formatting values are simple appending ```.format()``` after calling ```.Currenc
 
  ```
 
-  let dollar = dolares('USA', 1000)
+  let dollar = dolares('USD', "", 1000)
   
   dollar.Currency().format()
   output: $1000.00
   
   
 ```
+
+you can append the code to the end of currency by passing ```true``` as parameter in the format 
 
 ## Checking for available currencies 
 
