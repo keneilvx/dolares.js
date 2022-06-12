@@ -55,6 +55,16 @@ Formatting values are simple appending ```.format()``` after calling ```.Currenc
 
 you can append the code to the end of currency by passing ```true``` as parameter in the format 
 
+ ```
+
+  let dollar = dolares('USD', "", 1000)
+  
+  dollar.Currency().format(true)
+  output: $1000.00 USD
+  
+  
+```
+
 ## Checking for available currencies 
 
 To see all available currencies you can use the ```.available_currencies()``` method to access the object containing all available curriencies 
