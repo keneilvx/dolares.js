@@ -18,8 +18,9 @@ debugger
              {
                 name: "YEN",
                 country: "Japan",
-                decimal_points: 2,
+                decimal_points: 0,
                 symbol:'¥',
+                code: "YEN"
             },
             {
                 name: "USD",
@@ -44,7 +45,7 @@ debugger
 
     ]
         //Stores a default symbol for user
-        let symbol = "$"
+        let tempCountry = null
 
 
     // create prototype to access all methods in the Dolares scope
@@ -63,7 +64,7 @@ debugger
                         //if currency is equal to any of the currency names in the list
                         if(currencies[i].name === tempCurrency ){
                            this.currency = tempCurrency
-                            symbol = currencies[i].symbol
+                            tempCountry = currencies[i]
                         }
                         else{
                             this.currency ="Unknown Currency"
@@ -96,10 +97,15 @@ debugger
 
         //TODO: Manage currencies base on their region
             // converts a string or value into a currency value
-            format: function(){
+            format: function(code){
                     if (this.Currency){
                         if (typeof(this.value) === "number"){
-                            return symbol + '' + this.value.toFixed(2);
+                            if(code){
+                                return tempCountry.symbol + '' + this.value.toFixed(tempCountry.decimal_digits) + " " + tempCountry.code;
+                            }else{
+                                return tempCountry.symbol + '' + this.value.toFixed(tempCountry.decimal_digits);
+                            }
+
                         }else {
                             return "value is not a number"
                         }
@@ -111,6 +117,9 @@ debugger
             available_currencies: function (){
                 return(currencies)
             },
+
+
+
 
         //TODO: write function that also takes in a currency and converts it into another currency
 
