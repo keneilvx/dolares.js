@@ -90,7 +90,7 @@ debugger
                     return this.country
                 }
                 else{
-                    return "Invalid country or currency is null"
+                    return "Invalid country or country is null"
                 }
             },
 
