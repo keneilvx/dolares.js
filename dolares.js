@@ -6,7 +6,7 @@ debugger
         return new Dolares.init(currency , country, value)
     }
 
-
+        // Array of Currencies 
     let currencies = [
 
             {
