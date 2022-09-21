@@ -37,9 +37,8 @@ debugger
                 rounding: 0,
                 code: "EUR",
 
-            }
-
-
+            },
+            
 
 
 
@@ -122,6 +121,20 @@ debugger
 
 
         //TODO: write function that also takes in a currency and converts it into another currency
+
+        convert : function (rate , amount){
+
+            if (rate && amount){
+                let new_amount = amount *  rate;
+            
+                return new_amount;
+            
+            }else{
+                console.log("A value is missing please enter the missing value")
+            }
+           
+
+        }
 
     }
 
