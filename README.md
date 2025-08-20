@@ -39,7 +39,7 @@ const dolares = new Dolares();
 
  
 ## Formatting Currencies 
- ```.format()``` takes in 2  values by default ```amount ``` and the country's currency code ```currency```
+ ```.format()``` takes in 2  values by default ```amount``` and the country's currency code ```currency```
 
 
  ```js
@@ -55,7 +55,7 @@ by default the locale is ```en-US``` and custom_digits is ```2```
  ```js
 
 dolares.format(25000, "EUR", "de-DE")
-25.000,00 €
+//output : 25.000,00 €
 
 dolares.format(2500000, "JPY","ja-JP",0)
 //output : ￥25,000,000
