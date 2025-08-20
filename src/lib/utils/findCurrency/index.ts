@@ -5,8 +5,8 @@ export function findCurrency(input: string): Currency | undefined {
   const term = input.toLowerCase();
 
   return currencies.find(c =>
-    c.code.toLowerCase() === term ||
-    c.name.toLowerCase().includes(term)
+    c.code.toLowerCase() === term.toLocaleLowerCase() ||
+    c.name.toLowerCase().includes(term.toLocaleLowerCase())
   );
 }
 

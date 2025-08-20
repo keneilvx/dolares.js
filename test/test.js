@@ -1,4 +1,13 @@
 const { Dolares } = require("../dist/index.js");
 
-const eur = new Dolares(25000, "EUR");
-console.log(eur.format("de-DE"));
+const dolares = new Dolares();
+
+
+
+console.log(dolares.format(25000, "EUR", "de-DE"));
+console.log();
+console.log(dolares.format(25000, "JPY","ja-JP",0));
+console.log(dolares.getSymbol("EUR"));
+console.log(Intl.NumberFormat.supportedLocalesOf())
+// console.log(dolares.available_currencies());
+

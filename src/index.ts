@@ -1,37 +1,34 @@
 import { findCurrency } from "./lib/utils/findCurrency";
 import { Currency } from "./lib/types/Currency";
 import { currencies } from "./data/currencyDetails";
+import { Formatter } from "./lib/plugins/Formatter";
+import { Currencies } from "./lib/plugins/Currencies";
 
 export class Dolares {
-  amount: number;
-  currency: Currency;
+  // using facade pattern
 
-  constructor(amount: number, currencyInput: string) {
-    //find the currency in question
-    const found = findCurrency(currencyInput);
-    if (!found) {
-      throw new Error("Invalid input string entered");
-    }
+  private currencies: Currencies;
 
-    this.amount = amount;
-    this.currency = found;
+  constructor() {
+    this.currencies = new Currencies();
+  }
+  format(
+    amount: number,
+    currency: string,
+    locale: string = "en-US",
+    digits: number = -1
+  ) {
+    const formatter = new Formatter(currency);
+    return formatter.format(amount, locale, digits);
   }
 
-  format(locale: string = "en-US"): string {
-    return new Intl.NumberFormat(locale, {
-      style: "currency",
-      currency: this.currency.code,
-      minimumFractionDigits: this.currency.decimal_digits,
-      maximumFractionDigits: this.currency.decimal_digits,
-    }).format(this.amount);
+  getSymbol(currency: string) {
+    const formatter = new Formatter(currency);
+    return formatter.getSymbol();
   }
 
-  getSymbol(): string {
-    return this.currency.symbol;
-  }
-
-  available_currencies(): Currency[] {
-    return currencies;
+  available_currencies() {
+    return this.currencies.available_currencies();
   }
 }
 

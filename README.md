@@ -1,6 +1,6 @@
 # Dolares 
 
-A library made for formatting currencies, built using the ES6. It allows you 
+A library made for formatting currencies, built using the Typescript. It allows you 
 to easily format currencies with ease
  
  
@@ -8,7 +8,7 @@ to easily format currencies with ease
  
  to include dolares just import the libary using script tags you either use the minified version or the unminified version, I would recommend you use minified version for better perfomance 
  
-```<script src="dolares.min.js"></script> ```
+```const { Dolares } = require(dolares) ```
 
 OR 
 

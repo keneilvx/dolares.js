@@ -1,8 +1,19 @@
 {
   "name": "dolares",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A formatter for numbers into currencies ",
-  "main": "main.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "node test/test.js",
